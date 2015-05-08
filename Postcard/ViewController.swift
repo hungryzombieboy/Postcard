@@ -11,10 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
+    
     @IBOutlet weak var mailButton: UIButton!
-        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +50,23 @@ class ViewController: UIViewController {
         
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
         // This is to set the button to display " Mail sent" after its pressed.
+        
+        // This namelabel is part of a test.
+        nameLabel.hidden = false
+        // Unhiding the label.
+        
+        nameLabel.text = enterNameTextField.text
+        // This code takes the text from the name field and applies it to the nameLabel
+        
+        nameLabel.textColor = UIColor.blueColor()
+        // Changes the label text color to blue
+        
+        nameLabel.resignFirstResponder()
+        // Hides the virtual keyboard
+        
+        enterNameTextField.text = ""
+        //deletes the text in the name field after the button is pressed.
+        
     }
     
     
